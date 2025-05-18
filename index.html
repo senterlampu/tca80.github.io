@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCA80.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef1f5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(50, 50, 93, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .elegant-bg {
+            background: linear-gradient(135deg, #2A2F4F 0%, #3A4F7A 100%);
+            position: relative;
+        }
+        
+        .elegant-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .nav-link.active {
+            background-color: rgba(99, 102, 241, 0.15);
+            color: #4F46E5;
+            font-weight: 500;
+        }
+        
+        .nav-link.active svg {
+            color: #4F46E5;
+        }
+        
+        .page-transition {
+            transition: all 0.3s ease;
+        }
+        
+        .page-section {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .title-gradient {
+            background: linear-gradient(to right, #6366F1, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover .icon-container {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: white;
+            margin: 0 8px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .shopee {
+            background: linear-gradient(135deg, #EE4D2D, #FF7337);
+        }
+        
+        .tokopedia {
+            background: linear-gradient(135deg, #42B549, #4AD958);
+        }
+        
+        .youtube {
+            background: linear-gradient(135deg, #FF0000, #FF5E5E);
+        }
+        
+        .tiktok {
+            background: linear-gradient(135deg, #000000, #25F4EE);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #4AE278);
+        }
+        
+        .logo-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="card max-w-4xl w-full">
+        <div class="flex flex-col md:flex-row">
+            <!-- Left Column - Logo and Social Media Icons -->
+            <div class="elegant-bg p-8 flex flex-col items-center justify-between md:w-1/3 relative">
+                <!-- Logo -->
+                <div class="flex flex-col items-center mb-8 mt-4 z-10">
+                    <div class="logo-container mb-4">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <span class="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 text-transparent bg-clip-text">TCA</span>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold text-white tracking-tight text-center">
+                        tca<span class="text-white opacity-80">80</span>.com
+                    </h1>
+                </div>
+                
+                <!-- Social Media Icons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-4 z-10">
+                    <!-- Shopee -->
+                    <a href="https://shopee.co.id" target="_blank" class="social-icon shopee" title="Shopee">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    
+                    <!-- Tokopedia -->
+                    <a href="https://tokopedia.com" target="_blank" class="social-icon tokopedia" title="Tokopedia">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8v8"></path>
+                            <path d="M8 12h8"></path>
+                        </svg>
+                    </a>
+                    
+                    <!-- YouTube -->
+                    <a href="https://youtube.com" target="_blank" class="social-icon youtube" title="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com" target="_blank" class="social-icon tiktok" title="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path>
+                            <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+                            <path d="M15 8v8a4 4 0 0 1-4 4"></path>
+                            <line x1="9" y1="16" x2="9" y2="20"></line>
+                        </svg>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Decorative elements -->
+                <div class="absolute bottom-4 left-4 w-16 h-16 rounded-full bg-white opacity-5"></div>
+                <div class="absolute top-12 right-4 w-8 h-8 rounded-full bg-white opacity-5"></div>
+                <div class="absolute bottom-24 right-12 w-12 h-12 rounded-full bg-white opacity-5"></div>
+            </div>
+            
+            <!-- Right Column - Navigation -->
+            <div class="p-8 md:w-2/3 bg-white">
+                <div class="mb-6">
+                    <h2 class="text-xl font-semibold mb-2 title-gradient">Social Media Pages</h2>
+                    <p class="text-gray-500 text-sm">Connect with us on our social platforms</p>
+                </div>
+                
+                <nav class="space-y-1">
+                    <a href="#page1" class="nav-link active flex items-center text-gray-700 hover:text-indigo-600" onclick="setActivePage(this, 'page1')">
+                        <div class="icon-container bg-indigo-100">
+                            <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                            </svg>
+                        </div>
+                        Page 1
+                    </a>
+                    <a href="#page2" class="nav-link flex items-center text-gray-700 hover:text-purple-600" onclick="setActivePage(this, 'page2')">
+                        <div class="icon-container bg-purple-100">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Page 2
+                    </a>
+                    <a href="#page3" class="nav-link flex items-center text-gray-700 hover:text-blue-600" onclick="setActivePage(this, 'page3')">
+                        <div class="icon-container bg-blue-100">
+                            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Page 3
+                    </a>
+                    <a href="#page4" class="nav-link flex items-center text-gray-700 hover:text-pink-600" onclick="setActivePage(this, 'page4')">
+                        <div class="icon-container bg-pink-100">
+                            <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 005 10a6 6 0 0012 0c0-.352-.035-.696-.1-1.028A5.001 5.001 0 0010 11z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Page 4
+                    </a>
+                    <a href="#page5" class="nav-link flex items-center text-gray-700 hover:text-green-600" onclick="setActivePage(this, 'page5')">
+                        <div class="icon-container bg-green-100">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Page 5
+                    </a>
+                </nav>
+                
+                <div class="mt-8 pt-6 border-t border-gray-100">
+                    <div id="page-content" class="text-gray-600">
+                        <div id="page1" class="page-section">
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-8 bg-indigo-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Welcome to Page 1</h3>
+                            </div>
+                            <p class="pl-5">This is the first social media page. Connect with us here for the latest updates.</p>
+                        </div>
+                        <div id="page2" class="page-section hidden">
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-8 bg-purple-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Welcome to Page 2</h3>
+                            </div>
+                            <p class="pl-5">Explore our content on this second platform. Join our community!</p>
+                        </div>
+                        <div id="page3" class="page-section hidden">
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-8 bg-blue-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Welcome to Page 3</h3>
+                            </div>
+                            <p class="pl-5">Check out our third social media channel for exclusive content.</p>
+                        </div>
+                        <div id="page4" class="page-section hidden">
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-8 bg-pink-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Welcome to Page 4</h3>
+                            </div>
+                            <p class="pl-5">Follow us on our fourth platform for special announcements.</p>
+                        </div>
+                        <div id="page5" class="page-section hidden">
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-8 bg-green-500 rounded-full mr-3"></div>
+                                <h3 class="text-lg font-medium text-gray-800">Welcome to Page 5</h3>
+                            </div>
+                            <p class="pl-5">Connect with our community on this fifth social channel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setActivePage(element, pageId) {
+            // Remove active class from all links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to clicked link
+            element.classList.add('active');
+            
+            // Hide all page sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected page section
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+        
+        // Handle hash changes for direct links
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                const link = document.querySelector(`a[href="#${hash}"]`);
+                if (link) {
+                    setActivePage(link, hash);
+                }
+            }
+        }
+        
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        
+        // Check for hash on page load
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                handleHashChange();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'941c2d6a511baa34',t:'MTc0NzU3OTkzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
